@@ -37,3 +37,9 @@ export async function deleteUser(userId, token) {
   if (!res.ok) throw new Error('Failed to delete user')
   return res.json()
 }
+
+export async function getTopWorkers() {
+  const res = await fetch(`${API_URL}/users/top-workers`)
+  if (!res.ok) throw new Error('Failed to fetch top workers')
+  return res.json()
+}
